@@ -78,13 +78,70 @@ const AddRecord = () => {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardContent>
-          <Typography variant="h5">Authorize Provider</Typography>
-          <TextField fullWidth label="Provider Address" sx={{ mt: 2 }} value={providerAddress} onChange={(e) => setProviderAddress(e.target.value)} />
-          <Button variant="contained" sx={{ mt: 3 }} onClick={handleAuthorize}>Authorize</Button>
-        </CardContent>
-      </Card>
+      <Card sx={{ borderRadius: 3, boxShadow: "0 8px 20px rgba(0,0,0,0.1)" }}>
+  <CardContent>
+    {/* Title */}
+    <Typography
+      variant="h5"
+      sx={{
+        fontWeight: "bold",
+        mb: 1,
+        color: "#1976d2"
+      }}
+    >
+      Doctor Authorization
+    </Typography>
+
+    {/* Subtitle / instructions */}
+    <Typography
+      variant="body2"
+      sx={{
+        mb: 3,
+        color: "#555",
+        lineHeight: 1.6
+      }}
+    >
+      This section allows you to request authorization as a Doctor. Only an Admin can approve your request. 
+      Enter your Ethereum wallet address below and click "Authorize". Once approved, you will be able to add patient records securely.
+    </Typography>
+
+    {/* Input field */}
+    <TextField
+      fullWidth
+      label="Ethereum Provider Address"
+      placeholder="0xABC123..."
+      sx={{ mb: 3 }}
+      value={providerAddress}
+      onChange={(e) => setProviderAddress(e.target.value)}
+    />
+
+    {/* Action button */}
+    <Button
+      variant="contained"
+      fullWidth
+      sx={{
+        py: 1.5,
+        fontWeight: "bold",
+        background: "linear-gradient(to right, #1976d2, #1dc071)",
+        color: "#fff",
+        borderRadius: 2,
+        fontSize: "16px"
+      }}
+      onClick={handleAuthorize}
+    >
+      Request Authorization
+    </Button>
+    
+    {/* Optional info note */}
+    <Typography
+      variant="caption"
+      sx={{ mt: 2, display: "block", color: "#999", textAlign: "center" }}
+    >
+      🔒 All requests are logged on the blockchain for transparency and security.
+    </Typography>
+  </CardContent>
+</Card>
+
 
       {successMsg && <Alert severity="success" sx={{ mt: 2 }}>{successMsg}</Alert>}
       {errorMsg && <Alert severity="error" sx={{ mt: 2 }}>{errorMsg}</Alert>}

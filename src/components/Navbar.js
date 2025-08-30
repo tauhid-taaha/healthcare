@@ -5,6 +5,7 @@ import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import MedicalServicesIcon from "@mui/icons-material/MedicalServices";
 import StorageIcon from "@mui/icons-material/Storage";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import VerifiedUserIcon from "@mui/icons-material/VerifiedUser"; // ✅ Icon for Authorize Doctors
 
 // Sidebar navigation links
 const navlinks = [
@@ -12,6 +13,7 @@ const navlinks = [
   { name: "Add Record", link: "/add-record", icon: <MedicalServicesIcon fontSize="medium" /> },
   { name: "Get All Records", link: "/get-all-records", icon: <StorageIcon fontSize="medium" /> },
   { name: "Withdraw", link: "/withdraw", icon: <AccountBalanceWalletIcon fontSize="medium" /> },
+  { name: "Authorize Doctors", link: "/authorize", icon: <VerifiedUserIcon fontSize="medium" /> }, // ✅ New item
 ];
 
 const Navbar = () => {
