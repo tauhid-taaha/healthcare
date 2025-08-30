@@ -1,0 +1,364 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "patientID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "doctorName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "diagnosis",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "labTests",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "medicines",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "advice",
+				"type": "string"
+			}
+		],
+		"name": "addRecord",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "provider",
+				"type": "address"
+			}
+		],
+		"name": "authorizeProvider",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getAllRecords",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "recordID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "doctorName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "patientID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "patientName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "diagnosis",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "labTests",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "medicines",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "advice",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct HealthcareRecords.Record[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "patientID",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			}
+		],
+		"name": "PatientRegistered",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "patientID",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "recordID",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "doctorName",
+				"type": "string"
+			}
+		],
+		"name": "RecordAdded",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "dob",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "addr",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "phone",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "bloodGroup",
+				"type": "string"
+			}
+		],
+		"name": "registerPatient",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "provider",
+				"type": "address"
+			}
+		],
+		"name": "revokeProvider",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "patientID",
+				"type": "uint256"
+			}
+		],
+		"name": "getPatient",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "patientID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "dob",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "addr",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "phone",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "bloodGroup",
+						"type": "string"
+					}
+				],
+				"internalType": "struct HealthcareRecords.Patient",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "patientID",
+				"type": "uint256"
+			}
+		],
+		"name": "getPatientRecords",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "recordID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "doctorName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "patientID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "patientName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "diagnosis",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "labTests",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "medicines",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "advice",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct HealthcareRecords.Record[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "RESEARCH_ACCESS_FEE",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
